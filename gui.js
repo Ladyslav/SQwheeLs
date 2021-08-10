@@ -1,4 +1,5 @@
 var execBtn = document.getElementById("execute");
+var clearBtn = document.getElementById("clear");
 var outputElm = document.getElementById('output');
 var errorElm = document.getElementById('error');
 var commandsElm = document.getElementById('commands');
@@ -66,12 +67,18 @@ var tableCreate = function () {
 	}
 }();
 
-// Execute the commands when the button is clicked
+// Execute the commands when the Execute button is clicked
 function execEditorContents() {
 	noerror()
 	execute(editor.getValue() + ';');
 }
 execBtn.addEventListener("click", execEditorContents, true);
+
+// Clear the commands when the Clear button is clicked
+function clearEditorContents() {
+	editor.setValue('');
+}
+clearBtn.addEventListener("click", clearEditorContents, true);
 
 // Performance measurement functions
 var tictime;
