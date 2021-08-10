@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf8">
+  <title>Online SQL interpreter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+
+</head>
+
+<body>
+  <h1>Online SQL interpreter</h1>
+
+  <main>
+    <label for='commands'>Enter some SQL</label>
+    <br>
+
+    <textarea id="commands"></textarea>
+
+    <button id="execute" class="button">Execute</button>
+    <button id='savedb' class="button">Save the db</button>
+    <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
+
+    <div id="error" class="error"></div>
+
+    <pre id="output">Results will be displayed here</pre>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+
+  <footer>
+    
+  </footer>
+
+  <script type="text/javascript" src="gui.js"></script>
+</body>
+
+</html>
