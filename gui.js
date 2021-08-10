@@ -77,6 +77,7 @@ execBtn.addEventListener("click", execEditorContents, true);
 // Clear the commands when the Clear button is clicked
 function clearEditorContents() {
 	editor.setValue('');
+	outputElm.innerHTML = '';
 }
 clearBtn.addEventListener("click", clearEditorContents, true);
 
