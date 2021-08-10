@@ -1,0 +1,219 @@
+html,body {
+  height: 100%;
+	font-family: 'Roboto', sans-serif;
+	color: #333333;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.sidebar {
+	background-color: #203D62;
+	min-height: 100%;
+}
+
+.logo {
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.btn-primary {
+	height: 90px;
+	width: 250px;
+	background-color: #203D62;
+	border-color: #556A84;
+	text-align: left;
+}
+
+.btn-primary:hover {
+	background-color: #1F2E47;
+	border-color: #556A84;
+}
+
+.btn-primary-active {
+	background-color: #1F2E47;
+}
+
+.btnTitle {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.btnSubTitle {
+	font-size: 14px;
+	font-weight: 200;
+}
+
+.courseitems {
+	margin-bottom: 20px;
+}
+
+.courseHeading h1 {
+	font-size: 24px;
+	font-weight: 400;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 70px;
+}
+
+.editorWrapper {
+	margin-left: 60px;
+	width: 90%;
+	height: calc(100vh - 190px);
+	border-radius: 0 0 30px 30px;
+	background-image: url(/images/background_1.png);
+  background-repeat: repeat-x repeat-y;
+	border-top: solid 6px;
+	border-top-color: #D8E3EB;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.14);
+	-webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.14);
+	-moz-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.14);
+	padding-bottom: 20px;
+}
+
+progress {
+	-webkit-appearance: none;
+   appearance: none;
+	 height: 6px;
+	 background-color: #D8E3EB;
+	 position: relative;
+	 top: -17px;
+	 border: none;
+	 width: 90%;
+}
+
+.questions {
+	margin-top: 50px;
+	padding-left: 70px;
+	font-family: 'Lekton', sans-serif;
+}
+
+.number {
+	font-size: 16px;
+	color: #047BC1;
+}
+
+.mainQuestion {
+	font-size: 18px;
+}
+
+.sqlTextArea {
+	margin-top: 20px;
+	margin-left: 120px;
+}
+
+textarea {
+	border-radius: 8px;
+	border: solid 1px #047BC1;
+	padding: 15px;
+	outline: none;
+	font-family: 'Lekton', sans-serif;
+	font-size: 18px;
+}
+
+.btn-secondary {
+	background-color: #047BC1;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius: 5px;
+	border-color: #047BC1;
+	margin-top: 10px;
+	margin-left: 120px;
+}
+
+.btn-secondary:hover {
+	background-color: #203D62;
+	border-color: #203D62;
+}
+
+.tickicon {
+	position: relative;
+	top: -3px;
+}
+
+.press {
+	font-weight: 300;
+	font-size: 12px;
+	margin-left: 10px;
+	position: relative;
+	top: 5px;
+}
+
+.enterkey {
+	position: relative;
+	top: -3px;
+}
+
+.btnNextWrapper {
+	text-align: right;
+	margin-top:	20px;
+	position: relative;
+	right: 100px;
+	margin-bottom: 20px;
+}
+
+.btnR {
+	display: inline-block;
+	width: 36px;
+	height: 32px;
+	background-color: #047BC1;
+	border-radius: 0px 5px 5px 0px;
+	border-left: solid 1px #369AD4;
+	text-align: center;
+}
+
+.btnR:hover {
+	background-color: #203D62;
+}
+
+.btnL {
+	display: inline-block;
+	width: 36px;
+	height: 32px;
+	background-color: #047BC1;
+	border-radius: 5px 0px 0px 5px;
+	text-align: center;
+}
+
+.btnL:hover {
+	background-color: #203D62;
+}
+
+.btnLicon {
+	position: relative;
+	top: 2px;
+}
+
+.btnInactive {
+	opacity: 0.5;
+}
+
+.results h2 {
+	font-size: 18px;
+	font-family: 'Lekton', sans-serif;
+	margin-top: 30px;
+}
+
+.results {
+	padding: 0px 40px 0px 40px;
+}
+
+.tableWrapper {
+  height: 280px;
+  overflow-y: scroll;
+	overflow-x: scroll;
+}
+
+.CodeMirror {
+  border: 1px solid #222;
+  height: auto;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
