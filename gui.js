@@ -57,6 +57,7 @@ var tableCreate = function () {
 	}
 	return function (columns, values) {
 		var tbl = document.createElement('table');
+		tbl.classList.add('table');
 		var html = '<thead>' + valconcat(columns, 'th') + '</thead>';
 		var rows = values.map(function (v) { return valconcat(v, 'td'); });
 		html += '<tbody>' + valconcat(rows, 'tr') + '</tbody>';

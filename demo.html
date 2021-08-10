@@ -69,16 +69,22 @@
                 tables - Explain what's held in each of the following primary tables.</span>
             </div>
             <div class="sqlTextArea">
-              <textarea id="commands" name="comment" cols="100%" rows="7">SELECT * FROM MS_METER </textarea>
+              <textarea id="commands" name="comment" cols="100%" rows="7"></textarea>
             </div>
             <div class="okBtn">
+			 <button class="btn btn-secondary" id="execute">Execute</button>
               <a class="btn btn-secondary" href="demo_1.html">OK <img src="/images/tick.svg" alt="" class="tickicon"></a><span
                 class="press">press <strong>Enter</strong> <img src="/images/enterkey.svg" alt=""
                   class="enterkey"></span>
             </div>
+			<div id="error" class="error"></div>
+			<div id="output" class="tableWrapper" style="overflow:scroll; width:100%;">
+			<pre>Results will be displayed here</pre>
+			</div>
             <!-- Results Section -->
             <div class="results">
- 
+			
+			
             </div>
           </div>
           <!-- next & previous buttons -->
@@ -100,6 +106,7 @@
 
 
    <div id="error" class="error"></div>
+
 
    <button id="execute" class="button">Execute</button>
    <button id='savedb' class="button">Save the db</button>
