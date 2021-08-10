@@ -215,6 +215,10 @@ td {
 	white-space: nowrap;	
 }
 
+#quiz {
+	padding: 50px;	
+}
+
 .CodeMirror {
   border: 1px solid #222;
   height: auto;

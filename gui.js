@@ -6,6 +6,12 @@ var commandsElm = document.getElementById('commands');
 var dbFileElm = document.getElementById('dbfile');
 var savedbElm = document.getElementById('savedb');
 
+var choiceA = document.getElementById('choiceA');
+var choiceB = document.getElementById('choiceB');
+var choiceC = document.getElementById('choiceC');
+var choiceD = document.getElementById('choiceD');
+var choiceE = document.getElementById('choiceE');
+
 // Start the worker in which sql.js will run
 var worker = new Worker("../dist/worker.sql-wasm.js");
 worker.onerror = error;
