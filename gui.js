@@ -90,6 +90,22 @@ function clearEditorContents() {
 }
 clearBtn.addEventListener("click", clearEditorContents, true);
 
+function selectAnswer(btn, correct) {
+	if (correct) {
+		btn.innerHTML += '<div style="float: right;">Correct</div>';
+		choiceA.classList.add('disabled');
+		choiceB.classList.add('disabled');
+		choiceC.classList.add('disabled');
+		choiceD.classList.add('disabled');
+		choiceE.classList.add('disabled');
+		btn.style.opacity = 1.0;
+	}
+	else {
+		btn.innerHTML += '<div style="float: right;">False</div>';
+		btn.classList.add('disabled');
+	}
+}
+
 // Performance measurement functions
 var tictime;
 if (!window.performance || !performance.now) { window.performance = { now: Date.now } }

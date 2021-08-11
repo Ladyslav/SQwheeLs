@@ -68,11 +68,11 @@
               <span class="number">2</span> <img src="/images/arrow.svg" alt=""> <span class="mainQuestion">When you ran the ‘SELECT * FROM MS_METER_CFG’ query, which choice below best describes the data held in that table?</span>
             </div>            
             <div id="quiz" class="d-grid gap-2">
-              <button class="btn btn-primary mx-auto" type="button" id="choiceA" style="height: 50px; width:1000px; text-align: left;">A</button>
-              <button class="btn btn-primary mx-auto" type="button" id="choiceB" style="height: 50px; width:1000px; text-align: left;">B</button>
-              <button class="btn btn-primary mx-auto" type="button" id="choiceC" style="height: 50px; width:1000px; text-align: left;">C</button>
-              <button class="btn btn-primary mx-auto" type="button" id="choiceD" style="height: 50px; width:1000px; text-align: left;">D</button>
-              <button class="btn btn-primary mx-auto" type="button" id="choiceE" style="height: 50px; width:1000px; text-align: left;">E</button>
+              <button class="btn mx-auto btn-choice" id="choiceA" style="height: 50px; width:1000px; text-align: left;" onclick="selectAnswer(this, true)">A</button>
+              <button class="btn mx-auto btn-choice" id="choiceB" style="height: 50px; width:1000px; text-align: left;" onclick="selectAnswer(this, false)">B</button>
+              <button class="btn mx-auto btn-choice" id="choiceC" style="height: 50px; width:1000px; text-align: left;" onclick="selectAnswer(this, false)">C</button>
+              <button class="btn mx-auto btn-choice" id="choiceD" style="height: 50px; width:1000px; text-align: left;" onclick="selectAnswer(this, false)">D</button>
+              <button class="btn mx-auto btn-choice" id="choiceE" style="height: 50px; width:1000px; text-align: left;" onclick="selectAnswer(this, false)">E</button>
             </div>            
           </div>
           <!-- next & previous buttons -->
