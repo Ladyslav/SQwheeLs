@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/custom.css">
+
+  <!-- Googler Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <title>SQWheeLs Training</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row align-items-start">
+      <div class="col-2 sidebar vh-100">
+        <div class="logo">
+          <img src="/images/logo.svg" alt="logo" class="center">
+        </div>
+        <div class="courseitems">
+          <a class="btn btn-primary btn-primary-active" href="/index.html">
+            <span class="btnTitle">PGAS</span><br />
+            <span class="btnSubTitle"><strong>5</strong> Questions<br />
+              Estimated Time: <strong>60min</strong></span>
+          </a>
+        </div>
+
+        <div class="courseitems">
+          <a class="btn btn-primary" href="#">
+            <span class="btnTitle">QPTM</span><br />
+            <span class="btnSubTitle"><strong>20</strong> Questions<br />
+              Estimated Time: <strong>2hrs</strong></span>
+          </a>
+        </div>
+
+        <div class="courseitems">
+          <a class="btn btn-primary" href="#">
+            <span class="btnTitle">Aucerna Portfolio</span><br />
+            <span class="btnSubTitle"><strong>15</strong> Questions<br />
+              Estimated Time: <strong>45min</strong></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="courseHeading">
+          <h1>PGAS</h1>
+        </div>
+        <div class="mainWrapper ">
+          <div class="editorWrapper">
+            <progress id="file" value="2" max="5"></progress>
+            <!-- Sql Editor Section -->
+            <div class="questions">
+              <span class="number">2</span> <img src="/images/arrow.svg" alt=""> <span class="mainQuestion">Query the most-recent, in-use timeslice for all meter configurations. Include the Meter Id that the <br />customer would see in the app.</span>
+            </div>
+            <div class="sqlTextArea">
+              <textarea name="comment" form="usrform" cols="100%" rows="5">SELECT MS_METER.METER_IDNUM, * FROM MS_METER_CFG JOIN MS_METER ON MS_METER_CFG.METER_ID = MS_METER.METER_ID WHERE IN_USE_FLAG = 1 AND EFFECTIVE_DATE_END = ‘12/31/2078’</textarea>
+            </div>
+            <div class="okBtn">
+              <a class="btn btn-secondary" href="#">Execute <img src="/images/tick.svg" alt="" class="tickicon"></a><span
+                class="press">press <strong>Enter</strong> <img src="/images/enterkey.svg" alt=""
+                  class="enterkey"></span>
+            </div>
+            <!-- Results Section -->
+            <div class="results">
+              <h2>Results</h2>
+              <div class="tableWrapper" style="overflow:scroll; width:100%;">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">METER_CFG_ID</th>
+                      <th scope="col">METER_ID</th>
+                      <th scope="col">EFFECTIVE_DATE_START</th>
+                      <th scope="col">EFFECTIVE_DATE_END</th>
+                      <th scope="col">IN_USE_FLAG</th>
+                      <th scope="col">UPDATED</th>
+                      <th scope="col">METER_CFG_ID</th>
+                      <th scope="col">AUDIT_NOTE_ID</th>
+                      <th scope="col">BETA_RATIO</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>1</td>
+                      <td>156114</td>
+                      <td>2609</td>
+                      <td>2018-10-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2018-10-0314:34:37.923</td>
+                      <td>156114</td>
+                      <td>NULL</td>
+                      <td>0.2418965</td>
+                      <td>
+                    <tr>
+                      <td>2</td>
+                      <td>157964</td>
+                      <td>122</td>
+                      <td>2019-01-0109:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2019-01-2810:40:46.707</td>
+                      <td>157964</td>
+                      <td>NULL</td>
+                      <td>0.4946414</td>
+                      <td>
+                    <tr>
+                      <td>3</td>
+                      <td>157966</td>
+                      <td>2459</td>
+                      <td>2019-01-0109:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2019-01-2810:40:47.567</td>
+                      <td>157966</td>
+                      <td>NULL</td>
+                      <td>0.7129278</td>
+                      <td>
+                    <tr>
+                      <td>4</td>
+                      <td>157968</td>
+                      <td>385</td>
+                      <td>2019-01-0109:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2019-01-2810:40:48.567</td>
+                      <td>157968</td>
+                      <td>NULL</td>
+                      <td>0.4837929</td>
+                      <td>
+                    <tr>
+                      <td>5</td>
+                      <td>157970</td>
+                      <td>2628</td>
+                      <td>2019-01-0109:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2019-01-2810:40:49.597</td>
+                      <td>157970</td>
+                      <td>NULL</td>
+                      <td>0.625</td>
+                      <td>
+                    <tr>
+                      <td>6</td>
+                      <td>150169</td>
+                      <td>167</td>
+                      <td>2017-11-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-11-1410:02:48.133</td>
+                      <td>150169</td>
+                      <td>NULL</td>
+                      <td>0.1241619</td>
+                      <td>
+                    <tr>
+                      <td>7</td>
+                      <td>150171</td>
+                      <td>396</td>
+                      <td>2017-11-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-11-1410:02:48.570</td>
+                      <td>150171</td>
+                      <td>NULL</td>
+                      <td>0.1208313</td>
+                      <td>
+                    <tr>
+                      <td>8</td>
+                      <td>150173</td>
+                      <td>1115</td>
+                      <td>2017-11-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-11-1410:02:48.977</td>
+                      <td>150173</td>
+                      <td>NULL</td>
+                      <td>0.1814224</td>
+                      <td>
+                    <tr>
+                      <td>9</td>
+                      <td>152845</td>
+                      <td>7481</td>
+                      <td>2018-01-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2018-02-0814:27:10.943</td>
+                      <td>152845</td>
+                      <td>NULL</td>
+                      <td>0.3333333</td>
+                      <td>
+                    <tr>
+                      <td>10</td>
+                      <td>62418</td>
+                      <td>6981</td>
+                      <td>2013-11-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2013-11-1809:10:17.710</td>
+                      <td>62418</td>
+                      <td>75235</td>
+                      <td>0.5</td>
+                      <td>
+                    <tr>
+                      <td>11</td>
+                      <td>164623</td>
+                      <td>2165</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:10:17.710</td>
+                      <td>164623</td>
+                      <td>NULL</td>
+                      <td>0.1222295</td>
+                      <td>
+                    <tr>
+                      <td>12</td>
+                      <td>164625</td>
+                      <td>2633</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:13:05.263</td>
+                      <td>164625</td>
+                      <td>NULL</td>
+                      <td>0.2416626</td>
+                      <td>
+                    <tr>
+                      <td>13</td>
+                      <td>164627</td>
+                      <td>2123</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:13:05.577</td>
+                      <td>164627</td>
+                      <td>NULL</td>
+                      <td>0.2418965</td>
+                      <td>
+                    <tr>
+                      <td>14</td>
+                      <td>164931</td>
+                      <td>20095</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:13:53.233</td>
+                      <td>164931</td>
+                      <td>NULL</td>
+                      <td>0.4233188</td>
+                      <td>
+                    <tr>
+                      <td>15</td>
+                      <td>164936</td>
+                      <td>19977</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:13:54.030</td>
+                      <td>164936</td>
+                      <td>NULL</td>
+                      <td>0.6044487</td>
+                      <td>
+                    <tr>
+                      <td>16</td>
+                      <td>165305</td>
+                      <td>19824</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:14:42.733</td>
+                      <td>165305</td>
+                      <td>NULL</td>
+                      <td>0.7141083</td>
+                      <td>
+                    <tr>
+                      <td>17</td>
+                      <td>165310</td>
+                      <td>19534</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:14:43.280</td>
+                      <td>165310</td>
+                      <td>NULL</td>
+                      <td>0.4944783</td>
+                      <td>
+                    <tr>
+                      <td>18</td>
+                      <td>165312</td>
+                      <td>19537</td>
+                      <td>2020-06-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2516:14:43.500</td>
+                      <td>165312</td>
+                      <td>NULL</td>
+                      <td>0.4971415</td>
+                      <td>
+                    <tr>
+                      <td>19</td>
+                      <td>147856</td>
+                      <td>5757</td>
+                      <td>2017-09-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-09-2012:19:24.640</td>
+                      <td>147856</td>
+                      <td>NULL</td>
+                      <td>0.1209482</td>
+                      <td>
+                    <tr>
+                      <td>20</td>
+                      <td>147857</td>
+                      <td>5876</td>
+                      <td>2017-09-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-09-2012:19:24.907</td>
+                      <td>147857</td>
+                      <td>NULL</td>
+                      <td>NULL</td>
+                      <td>
+                    <tr>
+                      <td>21</td>
+                      <td>147860</td>
+                      <td>5774</td>
+                      <td>2017-09-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-09-2012:19:25.310</td>
+                      <td>147860</td>
+                      <td>NULL</td>
+                      <td>0.4235237</td>
+                      <td>
+                    <tr>
+                      <td>22</td>
+                      <td>147862</td>
+                      <td>5777</td>
+                      <td>2017-09-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2017-09-2012:19:25.657</td>
+                      <td>147862</td>
+                      <td>NULL</td>
+                      <td>0.1210068</td>
+                      <td>
+                    <tr>
+                      <td>23</td>
+                      <td>166490</td>
+                      <td>2515</td>
+                      <td>2020-07-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2615:59:33.280</td>
+                      <td>166490</td>
+                      <td>NULL</td>
+                      <td>0.2416626</td>
+                      <td>
+                    <tr>
+                      <td>24</td>
+                      <td>166492</td>
+                      <td>482</td>
+                      <td>2020-07-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2615:59:33.920</td>
+                      <td>166492</td>
+                      <td>NULL</td>
+                      <td>0.362494</td>
+                      <td>
+                    <tr>
+                      <td>25</td>
+                      <td>166495</td>
+                      <td>779</td>
+                      <td>2020-07-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2020-06-2615:59:34.733</td>
+                      <td>166495</td>
+                      <td>NULL</td>
+                      <td>0.2417795</td>
+                      <td>
+                    <tr>
+                      <td>26</td>
+                      <td>54269</td>
+                      <td>5159</td>
+                      <td>2012-02-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2012-01-0510:08:46.297</td>
+                      <td>54269</td>
+                      <td>50523</td>
+                      <td>0.21761</td>
+                      <td>
+                    <tr>
+                      <td>27</td>
+                      <td>54276</td>
+                      <td>5806</td>
+                      <td>2012-02-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2012-01-0510:25:57.327</td>
+                      <td>54276</td>
+                      <td>NULL</td>
+                      <td>0.24845</td>
+                      <td>
+                    <tr>
+                      <td>28</td>
+                      <td>72487</td>
+                      <td>7602</td>
+                      <td>2014-09-0413:36:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2014-09-1815:08:23.243</td>
+                      <td>72487</td>
+                      <td>NULL</td>
+                      <td>0.18125</td>
+                      <td>
+                    <tr>
+                      <td>29</td>
+                      <td>161404</td>
+                      <td>8121</td>
+                      <td>2019-10-0108:00:00</td>
+                      <td>2078-12-3100:00:00</td>
+                      <td>1</td>
+                      <td>2019-10-2209:04:26.983</td>
+                      <td>161404</td>
+                      <td>212780</td>
+                      <td>NULL</td>
+                      <td>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- next & previous buttons -->
+          <div class="row">
+            <div class="btnNextWrapper">
+              <a href="/index.html"><span class="btnL"><img src="/images/previous_arrow.svg" alt=""
+                    class="btnLicon"></span></a><a href="/question_2/question.html"><span class="btnR"><img
+                    src="/images/next_arrow.svg" alt="" class="btnRicon"></span></a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

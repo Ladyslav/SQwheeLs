@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/custom.css">
+
+  <!-- Googler Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <title>SQWheeLs Training</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row align-items-start">
+      <div class="col-2 sidebar vh-100">
+        <div class="logo">
+          <img src="/images/logo.svg" alt="logo" class="center">
+        </div>
+        <div class="courseitems">
+          <a class="btn btn-primary btn-primary-active" href="/index.html">
+            <span class="btnTitle">PGAS</span><br />
+            <span class="btnSubTitle"><strong>5</strong> Questions<br />
+              Estimated Time: <strong>60min</strong></span>
+          </a>
+        </div>
+
+        <div class="courseitems">
+          <a class="btn btn-primary" href="#">
+            <span class="btnTitle">QPTM</span><br />
+            <span class="btnSubTitle"><strong>20</strong> Questions<br />
+              Estimated Time: <strong>2hrs</strong></span>
+          </a>
+        </div>
+
+        <div class="courseitems">
+          <a class="btn btn-primary" href="#">
+            <span class="btnTitle">Aucerna Portfolio</span><br />
+            <span class="btnSubTitle"><strong>15</strong> Questions<br />
+              Estimated Time: <strong>45min</strong></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="courseHeading">
+          <h1>PGAS</h1>
+        </div>
+        <div class="mainWrapper ">
+          <div class="editorWrapper">
+            <progress id="file" value="4" max="5"></progress>
+            <!-- Sql Editor Section -->
+            <div class="questions">
+              <span class="number">4</span> <img src="/images/arrow.svg" alt=""> <span class="mainQuestion">Query all
+                the meters that start with "1" in their Meter ID in the database. Include their FQ Id and the most
+                recent, in-use Fluid Quality Periodic associated with the meter (mol composition, real relative density
+                and dry heating value. (Concept: meter to station relationship, meter to fq relationship, station to fq
+                relationship)
+            </div>
+            <div class="sqlTextArea">
+              <textarea name="comment" form="usrform" cols="100%"
+                rows="5">SELECT MS_METER.METER_IDNUM , MOL_METHANE, MOL_ETHANE, GRAVITY, HEATING_VALUE_DRY FROM MS_METER JOIN MS_STATION_CFG ON MS_METER.STATION_ID = MS_STATION_CFG.STATION_ID AND MS_STATION_CFG.IN_USE_FLAG = 1 AND MS_STATION_CFG.EFFECTIVE_DATE_END = ‘12/31/2078’ JOIN GQ_PERIODIC ON GQ_PERIODIC.GQ_ID = MS_STATION_CFG.GQ_ID AND GQ_PERIODIC.IN_USE_FLAG = 1 AND GQ_PERIODIC.EFFECTIVE_DATE_END = ‘12/31/2078’ WHERE METER_IDNUM LIKE ‘1%’ </textarea>
+            </div>
+            <div class="okBtn">
+              <a class="btn btn-secondary" href="#">Execute <img src="/images/tick.svg" alt="" class="tickicon"></a><span
+                class="press">press <strong>Enter</strong> <img src="/images/enterkey.svg" alt=""
+                  class="enterkey"></span>
+            </div>
+            <!-- Results Section -->
+            <div class="results">
+              <h2>Results</h2>
+              <div class="tableWrapper" style="overflow:scroll; width:100%;">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">METER_IDNUM</th>
+                      <th scope="col">MOL_METHANE</th>
+                      <th scope="col">MOL_ETHANE</th>
+                      <th scope="col">GRAVITY</th>
+                      <th scope="col">HEATING_VALUE_DRY</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>17213</td>
+                      <td>84.6541</td>
+                      <td>0.585</td>
+                      <td>0.6212</td>
+                      <td>875.6</td>
+                    <tr>
+                    <tr>
+                      <td>2</td>
+                      <td>12017</td>
+                      <td>89.9729</td>
+                      <td>3.6526</td>
+                      <td>0.6207</td>
+                      <td>1045.6</td>
+                    <tr>
+                    <tr>
+                      <td>3</td>
+                      <td>12420</td>
+                      <td>88.993</td>
+                      <td>6.126</td>
+                      <td>0.6392</td>
+                      <td>1122.87</td>
+                    <tr>
+                    <tr>
+                      <td>4</td>
+                      <td>16022</td>
+                      <td>86.2174</td>
+                      <td>4.495</td>
+                      <td>0.647</td>
+                      <td>1058.4</td>
+                    <tr>
+                    <tr>
+                      <td>5</td>
+                      <td>15778</td>
+                      <td>84.915</td>
+                      <td>4.775</td>
+                      <td>0.6509</td>
+                      <td>1048.12</td>
+                    <tr>
+                    <tr>
+                      <td>6</td>
+                      <td>1021WY</td>
+                      <td>84.1801</td>
+                      <td>0.2504</td>
+                      <td>0.6805</td>
+                      <td>879.934321981202</td>
+                    <tr>
+                    <tr>
+                      <td>7</td>
+                      <td>1214WY</td>
+                      <td>90.8206</td>
+                      <td>0.2728</td>
+                      <td>0.6283</td>
+                      <td>923.954343689632</td>
+                    <tr>
+                    <tr>
+                      <td>8</td>
+                      <td>1121WY</td>
+                      <td>74.425</td>
+                      <td>0.0816</td>
+                      <td>0.6955</td>
+                      <td>754.638480990269</td>
+                    <tr>
+                    <tr>
+                      <td>9</td>
+                      <td>1886WY</td>
+                      <td>92.9939</td>
+                      <td>0</td>
+                      <td>0.5919</td>
+                      <td>946.33</td>
+                    <tr>
+                    <tr>
+                      <td>10</td>
+                      <td>11047WY</td>
+                      <td>87.7858</td>
+                      <td>0</td>
+                      <td>0.6082</td>
+                      <td>895.128765120592</td>
+                    <tr>
+                    <tr>
+                      <td>11</td>
+                      <td>14102</td>
+                      <td>84.9024</td>
+                      <td>7.6748</td>
+                      <td>0.6856</td>
+                      <td>1186.4212</td>
+                    <tr>
+                    <tr>
+                      <td>12</td>
+                      <td>1299WY</td>
+                      <td>91.8855</td>
+                      <td>0.1147</td>
+                      <td>0.6048</td>
+                      <td>946.2</td>
+                    <tr>
+                    <tr>
+                      <td>13</td>
+                      <td>1300WY</td>
+                      <td>91.0248</td>
+                      <td>0.1072</td>
+                      <td>0.6056</td>
+                      <td>935</td>
+                    <tr>
+                    <tr>
+                      <td>14</td>
+                      <td>1302WY</td>
+                      <td>90.6489</td>
+                      <td>0.1914</td>
+                      <td>0.6207</td>
+                      <td>926.7</td>
+                    <tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- next & previous buttons -->
+          <div class="row">
+            <div class="btnNextWrapper">
+              <a href="/question_3/start.html"><span class="btnL"><img src="/images/previous_arrow.svg" alt=""
+                    class="btnLicon"></span></a><a href="/question_4/question.html"><span class="btnR"><img
+                    src="/images/next_arrow.svg" alt="" class="btnRicon"></span></a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

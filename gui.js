@@ -1,10 +1,8 @@
 var execBtn = document.getElementById("execute");
 var clearBtn = document.getElementById("clear");
 var outputElm = document.getElementById('output');
-var errorElm = document.getElementById('error');
 var commandsElm = document.getElementById('commands');
-var dbFileElm = document.getElementById('dbfile');
-var savedbElm = document.getElementById('savedb');
+var dbFileElm = document.getElementById('dbfile');;
 
 var choiceA = document.getElementById('choiceA');
 var choiceB = document.getElementById('choiceB');
@@ -14,7 +12,6 @@ var choiceE = document.getElementById('choiceE');
 
 // Start the worker in which sql.js will run
 var worker = new Worker("../dist/worker.sql-wasm.js");
-worker.onerror = error;
 
 // Open a database
 worker.postMessage({ action: 'open' });
@@ -22,15 +19,6 @@ worker.postMessage({ action: 'open' });
 // Connect to the HTML element we 'print' to
 function print(text) {
 	outputElm.innerHTML = text.replace(/\n/g, '<br>');
-}
-function error(e) {
-	console.log(e);
-	errorElm.style.height = '2em';
-	errorElm.textContent = e.message;
-}
-
-function noerror() {
-	errorElm.style.height = '0';
 }
 
 // Run a command in the database
@@ -40,7 +28,6 @@ function execute(commands) {
 		var results = event.data.results;
 		toc("Executing SQL");
 		if (!results) {
-			error({message: event.data.error});
 			return;
 		}
 
@@ -78,7 +65,6 @@ var tableCreate = function () {
 
 // Execute the commands when the Execute button is clicked
 function execEditorContents() {
-	noerror()
 	execute(editor.getValue() + ';');
 }
 execBtn.addEventListener("click", execEditorContents, true);
@@ -126,7 +112,6 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 	autofocus: true,
 	extraKeys: {
 		"Ctrl-Enter": execEditorContents,
-		"Ctrl-S": savedb,
 	}
 });
 
@@ -138,7 +123,6 @@ dbFileElm.onchange = function () {
 		worker.onmessage = function () {
 			toc("Loading database from file");
 			// Show the schema of the loaded database
-			editor.setValue("SELECT `name`, `sql`\n  FROM `sqlite_master`\n  WHERE type='table';");
 			execEditorContents();
 		};
 		tic();
@@ -151,25 +135,3 @@ dbFileElm.onchange = function () {
 	}
 	r.readAsArrayBuffer(f);
 }
-
-// Save the db to a file
-function savedb() {
-	worker.onmessage = function (event) {
-		toc("Exporting the database");
-		var arraybuff = event.data.buffer;
-		var blob = new Blob([arraybuff]);
-		var a = document.createElement("a");
-		document.body.appendChild(a);
-		a.href = window.URL.createObjectURL(blob);
-		a.download = "sql.db";
-		a.onclick = function () {
-			setTimeout(function () {
-				window.URL.revokeObjectURL(a.href);
-			}, 1500);
-		};
-		a.click();
-	};
-	tic();
-	worker.postMessage({ action: 'export' });
-}
-savedbElm.addEventListener("click", savedb, true);
