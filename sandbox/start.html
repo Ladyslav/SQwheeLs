@@ -62,25 +62,18 @@
         </div>
         <div class="mainWrapper ">
           <div class="editorWrapper">
-            <progress id="file" value="4" max="5"></progress>
+            <progress id="file" value="5" max="5"></progress>
             <!-- Sql Editor Section -->
             <div class="questions">
-              <span class="number">4</span> <img src="/images/arrow.svg" alt=""> <span class="mainQuestion">Query all the meters that start with "1" in their Meter ID in the database. Include their FQ Id and the most recent, in-use Fluid Quality Periodic associated with the meter (mol composition, real relative density and dry heating value. (Concept: meter to station relationship, meter to fq relationship, station to fq relationship)</span>
+              <span class="mainQuestion2">PGAS SQL Sandbox</span>
             </div>
             <div class="sqlTextArea">
-              <textarea id="commands" name="comment" form="usrform" cols="100%" rows="5">SELECT MS_METER.METER_IDNUM, MOL_METHANE, MOL_ETHANE, GRAVITY, HEATING_VALUE_DRY 
-FROM MS_METER 
-JOIN MS_STATION_CFG 
-  ON MS_METER.STATION_ID = MS_STATION_CFG.STATION_ID 
-  AND MS_STATION_CFG.IN_USE_FLAG = 1 
-  AND MS_STATION_CFG.EFFECTIVE_DATE_END = ‘12/31/2078’ 
-JOIN GQ_PERIODIC 
-  ON GQ_PERIODIC.GQ_ID = MS_STATION_CFG.GQ_ID 
-  AND GQ_PERIODIC.IN_USE_FLAG = 1 
-  AND GQ_PERIODIC.EFFECTIVE_DATE_END = ‘12/31/2078’ 
-WHERE METER_IDNUM LIKE ‘1%’ 
+              <textarea id="commands" name="comment" form="usrform" cols="100%" rows="5">
+
+
               </textarea>
             </div>
+            <br>
             <div class="okBtn">
               <button class="btn btn-secondary" id="execute">Execute <img src="/images/tick.svg" alt class="tickicon"></button>
               <span class="press">
@@ -97,8 +90,8 @@ WHERE METER_IDNUM LIKE ‘1%’
           <!-- next & previous buttons -->
           <div class="row">
             <div class="btnNextWrapper">
-              <a href="/question_3/start.html"><span class="btnL"><img src="/images/previous_arrow.svg" alt=""
-                    class="btnLicon"></span></a><a href="/question_4/question.html"><span class="btnR"><img
+              <a href="/question_4/start.html"><span class="btnL"><img src="/images/previous_arrow.svg" alt=""
+                    class="btnLicon"></span></a><a href="/question_5/question.html"><span class="btnR"><img
                     src="/images/next_arrow.svg" alt="" class="btnRicon"></span></a>
             </div>
           </div>

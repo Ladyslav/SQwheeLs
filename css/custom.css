@@ -258,3 +258,8 @@ textarea {
   overflow-y: hidden;
   overflow-x: auto;
 }
+
+.mainQuestion2 {
+	font-size: 24px;
+	margin-left: 50px;
+}
