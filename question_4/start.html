@@ -6,6 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -65,15 +68,25 @@
               <span class="number">4</span> <img src="/images/arrow.svg" alt=""> <span class="mainQuestion">Query all the meters that start with "1" in their Meter ID in the database. Include their FQ Id and the most recent, in-use Fluid Quality Periodic associated with the meter (mol composition, real relative density and dry heating value. (Concept: meter to station relationship, meter to fq relationship, station to fq relationship)</span>
             </div>
             <div class="sqlTextArea">
-              <textarea name="comment" form="usrform" cols="100%" rows="5">SELECT MS_METER.METER_IDNUM , MOL_METHANE, MOL_ETHANE, GRAVITY, HEATING_VALUE_DRY FROM MS_METER JOIN MS_STATION_CFG ON MS_METER.STATION_ID = MS_STATION_CFG.STATION_ID AND MS_STATION_CFG.IN_USE_FLAG = 1 AND MS_STATION_CFG.EFFECTIVE_DATE_END = ‘12/31/2078’ JOIN GQ_PERIODIC ON GQ_PERIODIC.GQ_ID = MS_STATION_CFG.GQ_ID AND GQ_PERIODIC.IN_USE_FLAG = 1 AND GQ_PERIODIC.EFFECTIVE_DATE_END = ‘12/31/2078’ WHERE METER_IDNUM LIKE ‘1%’ </textarea>
+              <textarea id="commands" name="comment" form="usrform" cols="100%" rows="5">SELECT MS_METER.METER_IDNUM, MOL_METHANE, MOL_ETHANE, GRAVITY, HEATING_VALUE_DRY 
+FROM MS_METER 
+JOIN MS_STATION_CFG 
+  ON MS_METER.STATION_ID = MS_STATION_CFG.STATION_ID 
+  AND MS_STATION_CFG.IN_USE_FLAG = 1 
+  AND MS_STATION_CFG.EFFECTIVE_DATE_END = ‘12/31/2078’ 
+JOIN GQ_PERIODIC 
+  ON GQ_PERIODIC.GQ_ID = MS_STATION_CFG.GQ_ID 
+  AND GQ_PERIODIC.IN_USE_FLAG = 1 
+  AND GQ_PERIODIC.EFFECTIVE_DATE_END = ‘12/31/2078’ 
+WHERE METER_IDNUM LIKE ‘1%’ 
+              </textarea>
             </div>
             <div class="okBtn">
-              <a class="btn btn-secondary" href="/question_4/query.html">Execute <img src="/images/tick.svg" alt="" class="tickicon"></a><span
-                class="press">press <strong>Enter</strong> <img src="/images/enterkey.svg" alt=""
-                  class="enterkey"></span>
+              <button class="btn btn-secondary" id="execute">Execute</button>
+              <button class="btn btn-secondary" id="clear">Clear</button>
             </div>
             <!-- Results Section -->
-            <div class="results">
+            <div id="output" class="tableWrapper" style="overflow:scroll; width:100%;">
  
             </div>
           </div>
@@ -90,6 +103,7 @@
 
       </div>
     </div>
+	<label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
   </div>
 
 
@@ -97,6 +111,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+  <script type="text/javascript" src="../gui.js"></script>
 </body>
 
 </html>
